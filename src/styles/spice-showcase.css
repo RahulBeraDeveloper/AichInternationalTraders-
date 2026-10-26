@@ -1,0 +1,27 @@
+@keyframes spOrbit { to { transform: rotate(360deg); } }
+@keyframes spOrbitRev { to { transform: rotate(-360deg); } }
+@keyframes spBob { 0%,100% { transform: translateY(0) rotate(-4deg); } 50% { transform: translateY(-12px) rotate(5deg); } }
+@keyframes spDust { 0% { transform: translateY(20px) scale(.6); opacity: 0; } 20% { opacity: .9; } 100% { transform: translateY(-260px) translateX(var(--dx)) scale(1.1); opacity: 0; } }
+@keyframes spAura { 0%,100% { opacity: .45; transform: scale(1); } 50% { opacity: .9; transform: scale(1.1); } }
+@keyframes spShine { from { transform: translateX(-120%) skewX(-20deg); } to { transform: translateX(220%) skewX(-20deg); } }
+@keyframes spPop { 0% { opacity: 0; transform: translateY(8px) scale(.96); } 100% { opacity: 1; transform: none; } }
+
+.sp-orbit { animation: spOrbit 60s linear infinite; }
+.sp-orbit-rev { animation: spOrbitRev 90s linear infinite; }
+.sp-counter { animation: spOrbitRev 60s linear infinite; }
+.sp-bob { animation: spBob 5s ease-in-out infinite; }
+.sp-dust { animation: spDust 7s ease-in infinite; }
+.sp-aura { animation: spAura 5s ease-in-out infinite; }
+.sp-shine::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent, rgba(255,240,178,.35), transparent);
+  animation: spShine 4.5s ease-in-out infinite;
+}
+.sp-pop { animation: spPop .6s ease both; }
+.sp-scene:hover .sp-orbit, .sp-scene:hover .sp-counter { animation-play-state: paused; }
+
+@media (prefers-reduced-motion: reduce) {
+  .sp-orbit, .sp-orbit-rev, .sp-counter, .sp-bob, .sp-dust, .sp-aura, .sp-shine::after { animation: none !important; }
+}

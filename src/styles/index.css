@@ -1,0 +1,37 @@
+@import './animations.css';
+@import './world-backdrop.css';
+@import './spice-showcase.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  .gold-gradient-text {
+    background: linear-gradient(135deg, #fff0b2 0%, #d4af37 50%, #aa771c 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .gold-gradient-bg {
+    background: linear-gradient(135deg, #f3e5ab 0%, #d4af37 50%, #b8860b 100%);
+  }
+  .gold-border-glow {
+    box-shadow: 0 0 25px -5px rgba(212, 175, 55, 0.25);
+  }
+  .glass-card {
+    background: rgba(13, 17, 26, 0.75);
+    @apply backdrop-blur-[16px];
+  }
+  /* Bootstrap grid gutters matched to the original Tailwind `gap-8` (2rem) */
+  .row-gap-8 {
+    --bs-gutter-x: 2rem;
+    --bs-gutter-y: 2rem;
+  }
+}
