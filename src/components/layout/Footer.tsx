@@ -45,8 +45,8 @@ export function Footer() {
             <h4 className={heading}>Direct Contact</h4>
             <div className="space-y-2 text-xs text-gray-400">
               <p className="font-bold text-gray-200">{siteConfig.name}</p>
-              <p>E-mail:-{siteConfig.contact.email}</p>
-              <p>Contact us:-{siteConfig.contact.phoneDisplay}</p>
+              <p>E-mail:- {siteConfig.contact.email}</p>
+              <p>Contact us:- {siteConfig.contact.phoneDisplay}</p>
               <p className="text-amber-300">{siteConfig.contact.location}</p>
             </div>
           </div>
